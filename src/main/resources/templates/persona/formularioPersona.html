@@ -1,0 +1,11 @@
+<html style="background-color: rgb(16, 13, 10); color: ghostwhite;">
+	<h1>---- Creando Persona ----</h1>
+	<form action="#" th:action="@{nuevapersona}" th:object="${persona}" method="post">
+		<p>NOMBRE: <input type="text" th:field="*{nombre}" placeholder="Ingrese su nombre"/></p>
+		<p>EDAD: <input type="text" th:field="*{edad}" placeholder="Ingrese su edad"/> <span th:if="${#fields.hasErrors('edad')}" th:errors="*{edad}"/></p>
+		<p>PESO: <input type="text" th:field="*{peso}" placeholder="Ingrese su peso"/> <span th:if="${#fields.hasErrors('peso')}" th:errors="*{peso}"/></p>
+		<p>PAIS: <input type="text" th:field="*{pais}" placeholder="Ingrese su pais"/></p>
+		
+		<input type="submit" />
+	</form>
+</html>

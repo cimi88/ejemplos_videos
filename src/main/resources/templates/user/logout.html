@@ -1,0 +1,21 @@
+<html style="background-color: #100d0a; color: ghostwhite;">
+
+	<head>
+		<style>
+			body {font-family: monospace, sans-serif;}
+			h1 {text-align: center;}
+			p, span {
+				margin: 0 auto;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Sesión cerrada con éxito.</h1>
+		<form th:action="@{/loginprocess}" method="post">
+            <input type="text" name="username" id="username" placeholder="Usuario" />
+            <input type="password" name="password" id="password" placeholder="Contraseña" />
+            <input type="submit" value="Ingresar" />
+        </form>
+	</body>
+</html>

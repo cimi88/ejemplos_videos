@@ -1,0 +1,59 @@
+<html style="background-color: #100d0a; color: ghostwhite;">
+
+	<head>
+		<style>
+			body {font-family: monospace, sans-serif;}
+			h1 {text-align: center;}
+			p, span {
+				margin: 0 auto;
+				text-align: center;
+			}
+            
+			#table {
+			border-collapse: collapse;
+  			margin: auto;
+			}
+            
+			#table th {
+				background-color: #3e3328;
+				text-align: center;
+				padding: 0 4em;
+			}
+            #table th:not(:last-child) {
+            	border-right: 1px solid #ddd;
+            }
+            #table tr:nth-child(even) {background-color: #1c1712;}
+            
+            #table tr:hover {background-color: #2f261e; transition: .25s ease;}
+            #table tr:not(:hover) {transition: .25s ease;}
+            
+            #table td {
+				text-align: center;
+				padding: 0 4em;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>---- Persona agregada ----</h1>	
+		<p> Nombre: <span th:text="${persona.nombre}"/></p>
+		<p> Edad: <span th:text="${persona.edad}"/></p>
+		<p> Peso: <span th:text="${persona.peso}"/></p>
+		<p> Pais: <span th:text="${persona.pais}"/></p>	
+			
+			
+		<h1>---- Personas cargadas ----</h1>
+		<table id="table">
+			<th>Nombre </th>
+			<th>Edad </th>
+			<th>Peso </th>
+			<th>Pais </th>
+		
+			<tr th:each="p:${listaPersonas}">
+				<td th:text="${p.nombre}"></td>
+				<td th:text="${p.edad}"></td>
+				<td th:text="${p.peso}"></td>
+				<td th:text="${p.pais}"></td>
+			</tr>
+		</table>
+	</body>
+</html>
